@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace Blog.Data
 {
-    public class Tag : BaseEntity
+    public class Tag
     {
+        [Key]
+        public Guid TagId { get; set; }
+
         [StringLength(75)]
         public string Title { get; set; }
 

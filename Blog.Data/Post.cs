@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 
 namespace Blog.Data
 {
-    public class Post : BaseEntity
+    public class Post
     {
+        [Key]
+        public Guid PostId { get; set; }
+
         public string AuthorId { get; set; }
+        public User User { get; set; }
 
         [StringLength(75)]
         public string Title { get; set; }
@@ -25,5 +29,8 @@ namespace Blog.Data
         public DateTime UpdatedAt { get; set; }
         public DateTime PublishedAt { get; set; }
         public string Content { get; set; }
+
+        public ICollection<PostComment> PostComment { get; set; }
+        public ICollection<PostMeta> PostMeta { get; set; }
     }
 }

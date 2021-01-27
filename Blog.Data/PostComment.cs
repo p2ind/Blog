@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 
 namespace Blog.Data
 {
-    public class PostComment : BaseEntity
+    public class PostComment 
     {
+        [Key]
+        public Guid PostCommentId { get; set; }
+
         public string PostId { get; set; }
+        public Post Post { get; set; }
 
         [StringLength(100)]
         public string Title { get; set; }

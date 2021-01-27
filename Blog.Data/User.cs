@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Blog.Data
 {
-    public class User : BaseEntity
+    public class User
     {
+        [Key]
+        public Guid UserId { get; set; }
         [StringLength(50)]
         public string FirstName { get; set; }
 
@@ -31,5 +33,7 @@ namespace Blog.Data
         public string Intro { get; set; }
         public string Profile { get; set; }
         public string ProfileImage { get; set; }
+
+        public ICollection<Post> Post { get; set; }
     }
 }
