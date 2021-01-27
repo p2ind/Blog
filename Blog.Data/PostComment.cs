@@ -14,6 +14,7 @@ namespace Blog.Data
         [Key]
         public Guid PostCommentId { get; set; }
 
+        [ForeignKey("Post")]
         public string PostId { get; set; }
         public Post Post { get; set; }
 
