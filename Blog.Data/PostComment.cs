@@ -9,7 +9,7 @@ namespace Blog.Data
 {
     public class PostComment : BaseEntity
     {
-        public int PostId { get; set; }
+        public string PostId { get; set; }
 
         [StringLength(100)]
         public string Title { get; set; }

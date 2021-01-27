@@ -9,7 +9,7 @@ namespace Blog.Data
 {
     public class Post : BaseEntity
     {
-        public int AuthorId { get; set; }
+        public string AuthorId { get; set; }
 
         [StringLength(75)]
         public string Title { get; set; }
